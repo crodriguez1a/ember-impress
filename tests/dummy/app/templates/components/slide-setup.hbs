@@ -1,0 +1,22 @@
+<h2>Setup</h2>
+
+<h4>Installation</h4>
+<p>
+  <pre>{{#code-hljs language="bash"}}
+  ember install ember-impress
+  {{/code-hljs}}</pre>
+</p>
+
+<h4>Routing</h4>
+<p>
+  Impress.js uses hash location to route between slides, so you'll have configure your consuming Ember app to allow for that.
+  <pre>{{#code-hljs language="javascript"}}
+    //environment.js
+
+    module.exports = function(environment) {
+      var ENV = {
+        locationType: 'none',
+        //...
+  {{/code-hljs}}</pre>
+  <note class="alert">Although, Impress will generate a location history for each slide, no actual routes are created in Ember. This addon is not intended to transition between routes, but simply to provide a wrapper for Impress.js. For animated transitions, you'll want to use <a href="https://github.com/ember-animation/liquid-fire">Liquid Fire</a></note>
+</p>

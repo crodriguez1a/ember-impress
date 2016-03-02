@@ -1,0 +1,38 @@
+<h2>Components
+
+<span class="codish smaller">
+  &#123;&#123;impress-presentation&#125;&#125;
+</span>
+</h2>
+
+<h4>Template</h4>
+<p>
+  <pre>{{#code-hljs language="handlebars"}}
+  &#123;&#123;impress-presentation class="my-presentation" slides=model.slides&#125;&#125;
+  {{/code-hljs}}</pre>
+  <pre>{{#code-hljs language="handlebars"}}
+  &#123;&#123;#component "impress-presentation" class="my-presentation"&#125;&#125;
+    &#123;&#123;#each model.slides as |slide|&#125;&#125;
+      &lt;div id="&#123;&#123;slide.id}}" class="&#123;&#123;slide.class&#125;&#125;" data-x="&#123;&#123;slide.x&#125;&#125;" data-y="&#123;&#123;slide.y&#125;&#125;"&gt;
+        &#123;&#123;component slide.component&#125;&#125;
+      &lt;/div&gt;
+    &#123;&#123;/each&#125;&#125;
+  &#123;&#123;/component&#125;&#125;
+  {{/code-hljs}}</pre>
+</p>
+
+
+<h4>Model</h4>
+<p>
+  <pre>{{#code-hljs language="javascript"}}
+    slides: [
+      {
+        id: "my-great-slide",
+        classNames: "step slide",
+        x: "-1000",
+        y: "-1500",
+        component: "my-slide-component"
+      }
+    ]
+  {{/code-hljs}}</pre>
+</p>

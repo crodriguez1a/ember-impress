@@ -1,0 +1,170 @@
+//colors
+$color_monsoon_approx: #8d8687;
+$color_carnation_approx: #ef6155;
+$color_tree_poppy_approx: #f99b15;
+$color_lightning_yellow_approx: #fec418;
+$color_ocean_green_approx: #48b685;
+$color_fountain_blue_approx: #5bc4bf;
+$color_cerulean_approx: #06b6ef;
+$color_deluge_approx: #815ba4;
+$color_bleached_cedar_approx: #2f1e2e;
+$color_star_dust_approx: #D8D2CD;
+
+.hljs-comment {
+	color: $color_monsoon_approx;
+}
+.hljs-title {
+	color: $color_monsoon_approx;
+}
+.hljs-variable {
+	color: $color_carnation_approx;
+}
+.hljs-attribute {
+	color: $color_carnation_approx;
+}
+.hljs-tag {
+	color: $color_carnation_approx;
+}
+.hljs-regexp {
+	color: $color_carnation_approx;
+}
+.hljs-name {
+	color: $color_carnation_approx;
+}
+.ruby {
+	.hljs-constant {
+		color: $color_carnation_approx;
+	}
+	.hljs-symbol {
+		color: $color_ocean_green_approx;
+	}
+	.hljs-class .hljs-title {
+		color: $color_lightning_yellow_approx;
+	}
+	.hljs-function .hljs-title {
+		color: $color_cerulean_approx;
+	}
+	.hljs-title .hljs-keyword {
+		color: $color_cerulean_approx;
+	}
+}
+.xml {
+	.hljs-pi {
+		color: $color_carnation_approx;
+	}
+	.hljs-doctype {
+		color: $color_carnation_approx;
+	}
+	.hljs-cdata {
+		color: $color_ocean_green_approx;
+		opacity: 0.5;
+	}
+	.javascript {
+		opacity: 0.5;
+	}
+	.vbscript {
+		opacity: 0.5;
+	}
+	.css {
+		opacity: 0.5;
+	}
+	.hljs-tag .hljs-title {
+		color: $color_carnation_approx;
+	}
+}
+.css {
+	.hljs-id {
+		color: $color_carnation_approx;
+	}
+	.hljs-class {
+		color: $color_carnation_approx;
+	}
+	.hljs-pseudo {
+		color: $color_carnation_approx;
+	}
+	.hljs-hexcolor {
+		color: $color_fountain_blue_approx;
+	}
+	.hljs-rule .hljs-attribute {
+		color: $color_lightning_yellow_approx;
+	}
+}
+.hljs-number {
+	color: $color_tree_poppy_approx;
+}
+.hljs-preprocessor {
+	color: $color_tree_poppy_approx;
+}
+.hljs-built_in {
+	color: $color_tree_poppy_approx;
+}
+.hljs-literal {
+	color: $color_tree_poppy_approx;
+}
+.hljs-params {
+	color: $color_tree_poppy_approx;
+}
+.hljs-constant {
+	color: $color_tree_poppy_approx;
+}
+.hljs-string {
+	color: $color_ocean_green_approx;
+}
+.hljs-value {
+	color: $color_ocean_green_approx;
+}
+.hljs-inheritance {
+	color: $color_ocean_green_approx;
+}
+.hljs-header {
+	color: $color_ocean_green_approx;
+}
+.hljs-function {
+	color: $color_cerulean_approx;
+}
+.python {
+	.hljs-decorator {
+		color: $color_cerulean_approx;
+	}
+	.hljs-title {
+		color: $color_cerulean_approx;
+	}
+}
+.javascript {
+	.hljs-title {
+		color: $color_cerulean_approx;
+	}
+	.hljs-function {
+		color: $color_deluge_approx;
+	}
+	.xml {
+		opacity: 0.5;
+	}
+}
+.coffeescript {
+	.hljs-title {
+		color: $color_cerulean_approx;
+	}
+	.javascript {
+		opacity: 0.5;
+	}
+}
+.hljs-keyword {
+	color: $color_deluge_approx;
+}
+.hljs {
+	display: block;
+	overflow-x: auto;
+	background: $color_bleached_cedar_approx;
+	color: $color_star_dust_approx;
+	padding: 0.5em;
+}
+.html .hljs-doctype {
+	color: $color_carnation_approx;
+}
+.perl .hljs-sub {
+	color: $color_cerulean_approx;
+}
+.tex .hljs-formula {
+	opacity: 0.5;
+}

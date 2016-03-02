@@ -1,0 +1,26 @@
+{{#if slides.length}}
+  {{#each slides as |slide|}}
+    {{impress-slide
+      id=slide.id
+      classNames=slide.classNames
+      x=slide.x
+      y=slide.y
+      z=slide.z
+      scale=slide.scale
+      rotate=slide.rotate
+      rotateY=slide.rotateY
+      rotateZ=slide.rotatez
+      partial=slide.partial
+      component=slide.component}}
+  {{/each}}
+{{/if}}
+
+{{#if hasBlock}}
+  {{yield (action "next") (action "prev") (action "goto")}}
+{{/if}}
+
+{{#if _displayHint}}
+  <footer class="hint">
+    <p>{{hint}}</p>
+ </footer>
+{{/if}}

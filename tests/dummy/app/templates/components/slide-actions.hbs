@@ -1,0 +1,32 @@
+<h2>Actions</h2>
+
+<h4>Next</h4>
+<p>
+  <code>next</code> - moves to next step of the presentation,
+  <code>prev</code> - moves to previous step of the presentation.
+  <pre>{{#code-hljs language="htmlbars"}}
+  &#123;&#123;#impress-presentation as |prev next|&#125;&#125;
+    &lt;nav&gt;
+      &lt;button onmousedown="&#123;&#123;prev&#125;&#125;"&gt;Prev&lt;/button&gt;
+      &lt;button onmousedown="&#123;&#123;next&#125;&#125;"&gt;Prev&lt;/button&gt;
+    &lt;/nav>
+    &#123;&#123;!...Slides&#125;&#125;
+  &#123;&#123;#impress-presentation &#125;&#125;
+  {{/code-hljs}}</pre>
+</p>
+
+<h4>GoTo</h4>
+<p>
+  <code>api.goto( idx | id | element, [duration] )</code> - moves the presentation to the step given by its index number
+          id or the DOM element; second parameter can be used to define duration of the transition in ms,
+          but it's optional - if not provided default transition duration for the presentation will be used.
+  <pre>{{#code-hljs language="htmlbars"}}
+  &#123;&#123;#impress-presentation as |goto|&#125;&#125;
+    &lt;nav&gt;
+      Skip to slide: &lt;input value="&#123;&#123;selectedSlide&#125;&#125;"/&gt;
+      &lt;button onmousedown="&#123;&#123;goto selectedSlide&#125;&#125;"&gt;Go&lt;/button&gt;
+    &lt;/nav>
+    &#123;&#123;!...Slides&#125;&#125;
+  &#123;&#123;#impress-presentation &#125;&#125;
+  {{/code-hljs}}</pre>
+</p>

@@ -1,0 +1,7 @@
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  {{#if _componentPath}}
+    {{component _componentPath}}
+  {{/if}}
+{{/if}}

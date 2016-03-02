@@ -3,8 +3,12 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+    babel: {
+      optional: ['es7.decorators']
+    }
   });
+
+  app.import('bower_components/highlightjs/highlight.pack.min.js');
 
   /*
     This build file specifes the options for the dummy test app of this

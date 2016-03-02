@@ -1,0 +1,119 @@
+html {
+	background-image: linear-gradient(-90deg, #E8BBF7, #BBF2F7);
+	font-family: sans-serif;
+	font-weight: 100;
+	line-height: 1.25em;
+}
+
+main {
+	display: block;
+	padding: 0.5em;
+
+	nav {
+		position: fixed;
+		z-index: 999;
+		width: 18%;
+		background: $canvas-opaque;
+
+		ul, li {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		ul {
+			border: 1px solid $boulder-light;
+			border-radius: 0.25em;
+			li {
+				border-bottom: 1px solid $boulder-light;
+
+				&:last-child {
+					border: none;
+				}
+
+				a, span.no-link {
+					text-decoration: none;
+					display: block;
+					padding: 0.5em;
+					color: $blue;
+				}
+
+				span.no-link {
+					color: $boulder-light
+				}
+
+				ul {
+					border-radius: 0;
+					border: none;
+					border-top: 1px solid $boulder-light;
+					li {
+						padding-left: 1em;
+						font-size: 95%;
+					}
+				}
+			}
+		}
+	}
+
+	h1, h2, h3, h4 {
+		font-family: sans-serif;
+		font-weight: 100;
+		padding-bottom: 0;
+		margin-bottom: 0;
+
+		.smaller {
+			font-size: 90%;
+		}
+	}
+
+	.codish {
+		font-family: monospace;
+		color: $blue;
+	}
+
+	.centered {
+		text-align: center;
+	}
+
+	note {
+		display: inline-block;
+		font-size: 0.9em;
+		padding: 0.8em 0.8em 1em 0.8em;
+		background: $canvas;
+		text-align: justify;
+
+		&.alert {
+			position: relative;
+			display: inline-block;
+			padding-left: 2.5em;
+			&:before {
+				position: absolute;
+				left: 1em;
+				content: '\f071';
+				font-family: 'FontAwesome';
+				width: 1em;
+				display: inline-block;
+				height: 100%;
+			}
+		}
+	}
+
+	hr {
+		border: none;
+		background: none;
+		border-bottom: 1px solid $boulder;
+	}
+
+	section {
+		display: block;
+
+    pre {
+      opacity: 0.9;
+    }
+
+		code {
+			border-radius: 0.5em;
+			padding: 0.25em;
+		}
+	}
+}

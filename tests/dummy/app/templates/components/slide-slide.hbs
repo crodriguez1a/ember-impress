@@ -1,0 +1,34 @@
+<h2>Components
+<span class="codish smaller">
+  &#123;&#123; impress-slide &#125;&#125;
+</span>
+</h2>
+
+<h4>Template</h4>
+<p>
+  <pre>{{#code-hljs language="handlebars"}}
+  &#123;&#123;#component "impress-presentation" class="my-presentation"&#125;&#125;
+    &#123;&#123;#each model.slides as |slide|&#125;&#125;
+
+      &#123;&#123;impress-slide
+        id=slide.id
+        classNames=slide.classNames
+        x=slide.x
+        y=slide.y
+        z=slide.z
+        scale=slide.scale
+        rotate=slide.rotate
+        rotateY=slide.rotateY
+        rotateZ=slide.rotatez
+        component=slide.component&#125;&#125;
+
+      &#123;&#123;! Or&#125;&#125;
+
+      &#123;&#123;#component "impress-slide" id=slide.id classNames=slide.classNames x=slide.x
+        &#123;&#123;some-component&#125;&#125;
+      &#123;&#123;/component&#125;&#125;
+
+    &#123;&#123;/each&#125;&#125;
+  &#123;&#123;/component&#125;&#125;
+  {{/code-hljs}}</pre>
+</p>

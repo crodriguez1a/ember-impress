@@ -1,3 +1,33 @@
-<h2 id="title">Welcome to Ember</h2>
-
-{{outlet}}
+<main>
+  <header>
+    <h1>ember-impress</h1>
+    <p>
+      An ember addon for  <a href="https://github.com/impress/impress.js/">impress.js</a>
+    </p>
+    <nav>
+      <ul>
+        <li><a href="#/slide-setup">Setup</a></li>
+        <li><span class="no-link">Components</span>
+          <ul>
+            <li><a href="#/slide-presentation">impress-presentation</a></li>
+            <li><a href="#/slide-slide">impress-slide</a></li>
+          </ul>
+        </li>
+        <li><a href="#/slide-actions">Actions</a></li>
+        <li><a href="http://github.com" target="_blank">Source</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    {{#impress-presentation class="impress-demo" slides=model.slides as |next prev goto|}}
+      <footer class="controls">
+        <nav>
+          <button onmousedown="{{prev}}">Prev</button>
+          <button onmousedown="{{next}}">Next</button>
+          <button onmousedown="{{goto}}">Goto</button>
+        </nav>
+      </footer>
+    {{/impress-presentation}}
+    {{!impress-presentation slides=model.slides class="impress-demo"}}
+  </section>
+</main>
