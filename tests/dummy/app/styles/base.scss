@@ -79,12 +79,17 @@ main {
 		text-align: center;
 	}
 
+	code {
+		background: $canvas;
+	}
+
 	note {
 		display: inline-block;
 		font-size: 0.9em;
 		padding: 0.8em 0.8em 1em 0.8em;
 		background: $canvas;
 		text-align: justify;
+		color: $boulder-light;
 
 		&.alert {
 			position: relative;
@@ -102,9 +107,9 @@ main {
 				text-align: center;
 				font-size: 1em;
 				font-weight: bold;
-				border: 2px solid $boulder-light;
+				background: $boulder-light;
 				border-radius: 100%;
-				color: $boulder-light;
+				color: $canvas;
 				padding-top: 0.25em;
 			}
 		}

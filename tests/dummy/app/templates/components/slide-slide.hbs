@@ -5,9 +5,9 @@
 </h2>
 <p>
   <pre>{{#code-hljs language="handlebars"}}
-  &#123;&#123;#component "impress-presentation" class="my-presentation"&#125;&#125;
-    &#123;&#123;#each model.slides as |slide|&#125;&#125;
-
+  &#123;&#123;#impress-presentation class="my-presentation"&#125;&#125;
+    &#123;&#123;! Using ember-composable-helpers&#125;&#125;
+    &#123;&#123;#each (filter-by "someConf" mySlidesModel) as |slide|&#125;&#125;
       &#123;&#123;impress-slide
         id=slide.id
         classNames=slide.classNames
@@ -22,11 +22,10 @@
 
       &#123;&#123;! Or&#125;&#125;
 
-      &#123;&#123;#component "impress-slide" id=slide.id classNames=slide.classNames x=slide.x
-        &#123;&#123;some-component&#125;&#125;
-      &#123;&#123;/component&#125;&#125;
-
+      &#123;&#123;#impress-slide id=slide.id classNames=slide.classNames x=slide.x y=slide.x&#125;&#125;
+        &#123;&#123;some-reusable-component model=slide.model&#125;&#125;
+      &#123;&#123;/impress-slide&#125;&#125;
     &#123;&#123;/each&#125;&#125;
-  &#123;&#123;/component&#125;&#125;
+  &#123;&#123;/impress-presentation&#125;&#125;
   {{/code-hljs}}</pre>
 </p>
