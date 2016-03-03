@@ -6,6 +6,7 @@ export default Ember.Route.extend({
       slides: [
         {
           id: "slide-setup",
+          title: "Setup",
           classNames: "step slide",
           x: "0",
           y: "0",
@@ -17,6 +18,7 @@ export default Ember.Route.extend({
         },
         {
           id: "slide-presentation",
+          title: "Components: impress-presentation",
           classNames: "step",
           x: "0",
           y: "0",
@@ -26,13 +28,15 @@ export default Ember.Route.extend({
         },
         {
           id: "slide-slide",
+          title: "Components: impress-slide",
           classNames: "step",
           x: "1000",
           y: "-1500",
           component: 'slide-slide'
         },
         {
-          id: "slide-actions",
+          id: "slide-controls",
+          title: "Controls",
           classNames: "step",
           x: "6200",
           y: "4300",
@@ -40,7 +44,7 @@ export default Ember.Route.extend({
           rotateX: "-40",
           rotateY: "10",
           scale: "2",
-          component: 'slide-actions'
+          component: 'slide-controls'
         }
       ]
     }

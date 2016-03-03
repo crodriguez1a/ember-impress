@@ -1,0 +1,16 @@
+{{#if hasBlock}}
+  {{yield (action "next") (action "prev") (action "goto") hint}}
+{{else}}
+  <footer class="controls">
+    <nav>
+      <ul>
+        <li><a {{action 'prev'}}> &lt; </a></li>
+        <li><a {{action 'next'}}> &gt; </a></li>
+        <li>
+          {{input value=slide}}
+          <button {{action 'goto' slide}}>Go</button>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+{{/if}}

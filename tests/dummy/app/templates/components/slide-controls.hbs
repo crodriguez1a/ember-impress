@@ -1,0 +1,38 @@
+<h2>
+  <span class="codish smaller">
+    &#123;&#123;impress-controls&#125;&#125;
+  </span>
+</h2>
+
+<h4>Prev &amp; Next</h4>
+<p>
+  <code>next</code> - moves to next step of the presentation,<br>
+  <code>prev</code> - moves to previous step of the presentation.
+  <pre>{{#code-hljs language="htmlbars"}}
+  &#123;&#123;#impress-controls as |prev next|&#125;&#125;
+    &lt;nav&gt;
+      &lt;a &#123;&#123;action prev&#125;&#125;>Prev&lt;/a&gt;
+      &lt;a &#123;&#123;action next&#125;&#125;>Next&lt;/a&gt;
+    &lt;/nav>
+  &#123;&#123;/impress-controls&#125;&#125;
+  {{/code-hljs}}</pre>
+</p>
+
+<h4>GoTo</h4>
+<p>
+  <code>api.goto( idx | id | element, [duration] )</code> - moves the presentation to the step given by its index number
+  id or the DOM element; second parameter can be used to define duration of the transition in ms,
+  but it's optional - if not provided default transition duration for the presentation will be used.
+  <pre>{{#code-hljs language="handlebars"}}
+  &#123;&#123;#impress-controls as |goto|&#125;&#125;
+    &lt;nav&gt;
+      &lt;select onchange=&#123;&#123;action (mut targetSlide) value="target.value"}}&gt;
+        &#123;&#123;#each model.slides as |slide|&#125;&#125;
+          &lt;option value="&#123;&#123;slide.id&#125;&#125;"&gt;&#123;&#123;slide.title&#125;&#125;&lt;/option&gt;
+        &#123;&#123;/each&#125;&#125;
+      &lt;/select&gt;
+      &lt;button &#123;&#123;action goto targetSlide&#125;&#125;&gt;Go&lt;/button&gt;
+    &lt;nav&gt;
+  &#123;&#123;/impress-controls &#125;&#125;
+  {{/code-hljs}}</pre>
+</p>

@@ -4,30 +4,30 @@
     <p>
       An ember addon for  <a href="https://github.com/impress/impress.js/">impress.js</a>
     </p>
-    <nav>
+    <nav class="left-nav">
       <ul>
         <li><a href="#/slide-setup">Setup</a></li>
         <li><span class="no-link">Components</span>
           <ul>
             <li><a href="#/slide-presentation">impress-presentation</a></li>
             <li><a href="#/slide-slide">impress-slide</a></li>
+            <li><a href="#/slide-controls">impress-controls</a></li>
           </ul>
         </li>
-        <li><a href="#/slide-actions">Actions</a></li>
-        <li><a href="http://github.com" target="_blank">Source</a></li>
+        <li><a href="https://github.com/crodriguez1a/ember-impress/" target="_blank">Source</a></li>
       </ul>
     </nav>
   </header>
   <section>
-    {{#impress-presentation class="impress-demo" slides=model.slides as |next prev goto|}}
-      <footer class="controls">
+    {{impress-presentation class="impress-demo" slides=model.slides}}
+    {{#impress-controls as |next prev goto hint|}}
+      <footer class="controls block">
         <nav>
-          <button onmousedown="{{prev}}">Prev</button>
-          <button onmousedown="{{next}}">Next</button>
-          <button onmousedown="{{goto}}">Goto</button>
+          <a class="prev" {{action prev}}>&lsaquo;</a>
+          <span class="hint">{{hint}}</span>
+          <a class="next" {{action next}}>&rsaquo;</a>
         </nav>
       </footer>
-    {{/impress-presentation}}
-    {{!impress-presentation slides=model.slides class="impress-demo"}}
+    {{/impress-controls}}
   </section>
 </main>

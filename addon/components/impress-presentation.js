@@ -68,55 +68,10 @@ export default Ember.Component.extend({
     }
 
     //Impress is included from index.js
-    this.set('impress', impress());
-    this.get('impress').init();
+    impress().init();
   },
 
   didInsertElement() {
     this._initializeImpress();
-  },
-  actions: {
-
-    /**
-      Moves to next step of the presentation
-
-      @method next
-      @returns Class
-      @public
-    */
-    next() {
-      console.log('next');
-      alert('hello');
-      this.get('impress').next();
-    },
-
-    /**
-      Moves to previous step of the presentation
-
-      @method prev
-      @returns Class
-      @public
-    */
-    prev() {
-      console.log('prev');
-      this.get('impress').prev();
-    },
-
-    /**
-      Moves the presentation to the step given by its index number
-      id or the DOM element; second parameter can be used to define duration of the transition in ms,
-      but it's optional - if not provided default transition duration for the presentation will be used.
-
-      @method goto
-      @returns Class
-      @params
-        selector String (index || id || element)
-        duration Number
-      @public
-    */
-    goto(selector, duration) {
-      console.log('goto');
-      this.get('impress').goto(selector, duration);
-    }
   }
 });
