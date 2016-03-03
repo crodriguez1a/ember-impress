@@ -9,14 +9,33 @@ html {
 	line-height: 1.25em;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 main {
 	display: block;
-	padding: 0.5em;
+
+  @media (max-width: 600px) {
+    nav.left-nav {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    nav.left-nav {
+      background: $canvas-nav-opaque;
+      transition: background 1s 0.5s, transform 0.5s 4.5s;
+    }
+  }
 
 	nav.left-nav {
+    height: 100%;
 		position: fixed;
 		z-index: 999;
-		width: 18%;
+		width: 20%;
+    padding: 1em;
 		//background: $canvas-opaque;
 
 		ul, li {
