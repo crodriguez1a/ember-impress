@@ -22,7 +22,7 @@ Impress.js uses hash location to step between slides, so you'll have to configur
 
 ## Documentation
 
-#### Ember Impress
+#### Ember Impress Demo
 <http://demos.evolutionaryapps.com/EmberImpress>
 
 #### Impress.js
