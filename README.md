@@ -1,34 +1,29 @@
 # Ember-impress
 
-This README outlines the details of collaborating on this Ember addon.
+An ember addon for [impress.js](https://github.com/impress/impress.js/)
 
-## Setting up the consuming application
-
-//TODO: Find a better way to say this
-Impress uses the `#` when updating the browser location, by default Ember's location is set to auto and will strip out the `#`. To avoid this conflict, set the location to `none`;
-
-    Router.reopen({
-      location: 'none'
-    });
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+`ember install ember-impress`
 
-## Running
+## Setup
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+Impress.js uses hash location to step between slides, so you'll have to configure your consuming Ember app to allow for that,
 
-## Running Tests
+    //config/environment.js
 
-* `ember test`
-* `ember test --server`
+    module.exports = function(environment) {
+      var ENV = {
+        locationType: 'none',
+        //...
 
-## Building
+*Note: Although, Impress will generate a location history for each slide, no actual routes are created in the Ember Router. This addon is not intended to transition between routes, but simply to provide a wrapper for Impress.js. For animated transitions, you'll want to use [Liquid Fire](https://github.com/ember-animation/liquid-fire)*
 
-* `ember build`
+## Documentation
 
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+#### Ember Impress
+<http://demos.evolutionaryapps.com/EmberImpress>
+
+#### Impress.js
+<https://github.com/impress/impress.js/>
