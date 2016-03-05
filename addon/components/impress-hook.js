@@ -51,7 +51,7 @@ export default Ember.Component.extend({
       run.later(() => {
         this.set('didInit', true);
         this._updatePresent();
-      }, 500);
+      }, 800);
     });
   },
 

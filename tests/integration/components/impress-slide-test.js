@@ -17,10 +17,27 @@ test('it renders', function(assert) {
 
   // Template block usage:
   this.render(hbs`
-    {{#impress-slide}}
+    {{#impress-slide }}
       template block text
     {{/impress-slide}}
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');
+});
+
+test('it received all of its data attributes', function(assert) {
+  this.render(hbs`{{impress-slide
+    id='hello'
+    classNames='world'
+    x='x'
+    y='y'
+    z='z'
+    scale='scale'
+    rotate='rotate'
+    rotateY='rotateY'
+    rotateZ='rotatez'
+    }}`);
+
+  let dataAttrs = $('#hello').data();
+  assert.equal(Object.getOwnPropertyNames(dataAttrs).length, 7, 'Slide data attributes were successfully provided');
 });

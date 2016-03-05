@@ -24,3 +24,13 @@ test('it renders', function(assert) {
 
   assert.equal(this.$().text().trim(), 'template block text');
 });
+
+test('impress was initialized', function(assert) {
+  this.render(hbs`
+    {{#impress-presentation}}
+      template block text
+    {{/impress-presentation}}
+  `);
+  
+  assert.equal($('body').hasClass('impress-supported'), true, 'Impress has altered the DOM');
+});

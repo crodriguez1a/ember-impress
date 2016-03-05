@@ -72,7 +72,7 @@ export default Ember.Component.extend({
     //Impress is included from index.js
     impress().init();
   },
-  
+
   didInsertElement() {
     this._initializeImpress();
   }

@@ -4,22 +4,23 @@
       <h1>ember-impress
        <p class="subtitle">An ember addon for  <a href="https://github.com/impress/impress.js/">impress.js</a></p>
       </h1>
-
+      {{!menu of slides}}
       {{#impress-hook as | impress |}}
         <ul>
-          {{#if impress.didInit}}
-            {{#each menu as |item|}}
-              <li class="{{if (eq item.id impress.currentStep) 'is-active'}}"><a href="#" {{action "navigate" item}}>{{item.title}}</a></li>
-            {{/each}}
-            <li><a class="secondary" href="/assets/samples/sample-model.js" download>{{oct-icon icon="octicon-cloud-download"}} Sample Model</a></li>
-            <li><a class="secondary" href="https://github.com/crodriguez1a/ember-impress/" target="_blank">{{oct-icon icon="octicon-mark-github"}} Source</a></li>
-          {{/if}}
+          {{#each menu as |item|}}
+            <li class="{{if (eq item.id impress.currentStep) 'is-active'}}"><a href="#" {{action "navigate" item}}>{{item.title}}</a></li>
+          {{/each}}
+          <li><a class="secondary" href="/assets/samples/sample-model.js" download>{{oct-icon icon="octicon-cloud-download"}} Sample Model</a></li>
+          <li><a class="secondary" href="https://github.com/crodriguez1a/ember-impress/" target="_blank">{{oct-icon icon="octicon-mark-github"}} Source</a></li>
         </ul>
       {{/impress-hook}}
     </nav>
   </header>
   <section>
+    {{!the presentation}}
     {{impress-presentation class="impress-demo" slides=model.slides}}
+
+    {{!the controls}}
     {{#impress-controls as |next prev goto hint|}}
       <footer class="controls block">
         <nav>

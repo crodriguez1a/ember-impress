@@ -18,6 +18,10 @@ html, body {
 main {
 	display: block;
 
+  code {
+    padding: 0.25em;
+  }
+  
   a {
     color: $accent;
   }
@@ -34,7 +38,7 @@ main {
 
   @media (max-width: 1200px) {
     nav.left-nav {
-      background: $canvas-nav-opaque;
+      background: $canvas-opaque-light;
       transition: background 1s 0.5s, transform 0.5s 4.5s;
     }
   }
@@ -66,6 +70,7 @@ main {
 
         &.is-active {
           border-bottom: 1px solid $boulder-lightest;
+          font-weight: 600;
           &:before {
             content: '';
             display: block;

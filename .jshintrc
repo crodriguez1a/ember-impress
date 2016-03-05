@@ -3,7 +3,8 @@
     "document",
     "window",
     "-Promise",
-    "impress"
+    "impress",
+    "hljs"
   ],
   "browser": true,
   "boss": true,

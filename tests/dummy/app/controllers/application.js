@@ -1,8 +1,6 @@
 import Ember from 'ember';
 import computed from 'ember-computed-decorators';
 
-const { set } = Ember;
-
 export default Ember.Controller.extend({
 
   /**

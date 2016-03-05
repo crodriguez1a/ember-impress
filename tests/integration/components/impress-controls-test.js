@@ -10,8 +10,7 @@ test('it renders', function(assert) {
   // Handle any actions with this.on('myAction', function(val) { ... });
 
   this.render(hbs`{{impress-controls}}`);
-
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$().find('footer').length, 1);
 
   // Template block usage:
   this.render(hbs`
@@ -21,4 +20,16 @@ test('it renders', function(assert) {
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');
+});
+
+test('Actions are yielded to consumer', function(assert) {
+  this.render(hbs`
+    {{#impress-controls as |prev next goto|}}
+      <a {{action prev}}>Prev</a>
+      <a {{action next}}>Prev</a>
+      <a {{action goto}}>Goto</a>
+    {{/impress-controls}}
+  `);
+
+  assert.equal(this.$().find('[data-ember-action]').length, 3, 'Prev, next and goto actions were yielded.');
 });
