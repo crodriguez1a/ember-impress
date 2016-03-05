@@ -1,6 +1,8 @@
 import Ember from 'ember';
 import layout from '../templates/components/impress-presentation';
-import computed from 'ember-computed-decorators';
+import computed, { alias } from 'ember-computed-decorators';
+
+const { run } = Ember;
 
 export default Ember.Component.extend({
   layout: layout,
@@ -70,7 +72,7 @@ export default Ember.Component.extend({
     //Impress is included from index.js
     impress().init();
   },
-
+  
   didInsertElement() {
     this._initializeImpress();
   }

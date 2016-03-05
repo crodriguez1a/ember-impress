@@ -1,21 +1,21 @@
 <main>
   <header>
     <nav class="left-nav">
-      <h1>ember-impress</h1>
-      <p>
-        An ember addon for  <a href="https://github.com/impress/impress.js/">impress.js</a>
-      </p>
-      <ul>
-        <li><a href="#/slide-setup">Setup</a></li>
-        <li><span class="no-link">Components</span>
-          <ul>
-            <li><a href="#/slide-presentation">impress-presentation</a></li>
-            <li><a href="#/slide-slide">impress-slide</a></li>
-            <li><a href="#/slide-controls">impress-controls</a></li>
-          </ul>
-        </li>
-        <li><a href="https://github.com/crodriguez1a/ember-impress/" target="_blank">Source</a></li>
-      </ul>
+      <h1>ember-impress
+       <p class="subtitle">An ember addon for  <a href="https://github.com/impress/impress.js/">impress.js</a></p>
+      </h1>
+
+      {{#impress-hook as | impress |}}
+        <ul>
+          {{#if impress.didInit}}
+            {{#each menu as |item|}}
+              <li class="{{if (eq item.id impress.currentStep) 'is-active'}}"><a href="#" {{action "navigate" item}}>{{item.title}}</a></li>
+            {{/each}}
+            <li><a class="secondary" href="/assets/samples/sample-model.js" download>{{oct-icon icon="octicon-cloud-download"}} Sample Model</a></li>
+            <li><a class="secondary" href="https://github.com/crodriguez1a/ember-impress/" target="_blank">{{oct-icon icon="octicon-mark-github"}} Source</a></li>
+          {{/if}}
+        </ul>
+      {{/impress-hook}}
     </nav>
   </header>
   <section>

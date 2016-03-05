@@ -3,7 +3,8 @@
 }
 
 html {
-	background-image: linear-gradient(-90deg, #E8BBF7, #BBF2F7);
+	background-image: linear-gradient(-90deg, $canvas, white);
+  //background: $canvas;
 	font-family: sans-serif;
 	font-weight: 100;
 	line-height: 1.25em;
@@ -16,6 +17,14 @@ html, body {
 
 main {
 	display: block;
+
+  a {
+    color: $accent;
+  }
+
+  p {
+    font-size: 0.9em;
+  }
 
   @media (max-width: 600px) {
     nav.left-nav {
@@ -45,34 +54,52 @@ main {
 		}
 
 		ul {
-			border: 1px solid $boulder-light;
-			border-radius: 0.25em;
+      margin-top: 1em;
+			border-right: 1px solid $boulder-lightest;
 			li {
-				border-bottom: 1px solid $boulder-light;
-
+        position: relative;
+        border-bottom: 1px dotted $boulder-lightest;
+        padding-left: 0.25em;
 				&:last-child {
 					border: none;
 				}
 
+        &.is-active {
+          border-bottom: 1px solid $boulder-lightest;
+          &:before {
+            content: '';
+            display: block;
+            width: 0.4em;
+            height: 0.4em;
+            background: $boulder-lightest;
+            border-radius: 100%;
+            position: absolute;
+            bottom: -0.2em;
+            left: -0.2em;
+          }
+        }
+
 				a, span.no-link {
 					text-decoration: none;
-					display: block;
+					display: inline-block;
+          vertical-align: middle;
+          width: 100%;
 					padding: 0.5em;
-					color: $blue;
+					color: $accent;
+          font-size: 0.9em;
+
+          &.secondary {
+            color: $secondary-accent;
+          }
+
+          .octicon {
+            display: inline-block;
+            vertical-align: middle;
+          }
 				}
 
 				span.no-link {
 					color: $boulder-light
-				}
-
-				ul {
-					border-radius: 0;
-					border: none;
-					border-top: 1px solid $boulder-light;
-					li {
-						padding-left: 1em;
-						font-size: 95%;
-					}
 				}
 			}
 		}
@@ -87,11 +114,28 @@ main {
 		.smaller {
 			font-size: 90%;
 		}
+
+    p {
+      &.subtitle {
+        margin: 0.5em 0 0 0;
+        padding: 0;
+        display: inline-block;
+        font-size: 0.65em;
+        color: $boulder-light;
+        a {
+          color: $secondary-accent;
+        }
+      }
+    }
 	}
+
+  h4 {
+    font-size: 0.9em;
+  }
 
 	.codish {
 		font-family: monospace;
-		color: $blue;
+		color: $accent;
 	}
 
 	.centered {
@@ -116,20 +160,18 @@ main {
 			padding-left: 3.5em;
 			&:before {
 				position: absolute;
-				left: 0.5em;
-				content: '\0021';
+				left: 0.25em;
+				content: '\f02d';
 				display: inline-block;
 				font-family: monospace;
 				height: 1.6em;
 				width: 2em;
-				font-family: "Lucida Console", Monaco, monospace;
+				font-family: "Octicons";
 				text-align: center;
-				font-size: 1em;
+				font-size: 1.5em;
 				font-weight: bold;
-				background: $boulder-light;
-				border-radius: 100%;
-				color: $canvas;
 				padding-top: 0.25em;
+        color: $warning;
 			}
 		}
 	}
@@ -152,4 +194,50 @@ main {
 			padding: 0.25em;
 		}
 	}
+
+  footer {
+  	&.controls {
+  		width: 100%;
+  		height: 5em;
+  		position: fixed;
+  		bottom: 0;
+  		left: 0;
+
+  		nav {
+  			background: $canvas-opaque;
+  			position: relative;
+  			left: 1%;
+  			width: 98%;
+  			text-align: center;
+  			display: table;
+  			a, span {
+  				display: table-cell;
+          vertical-align: middle;
+  				font-family: "Lucida Console", Monaco, monospace;
+  				font-weight: 600;
+  				font-size: 2em;
+  				padding: 0.5em;
+  				cursor: pointer;
+
+  				&.prev {
+  					text-align: left;
+  				}
+
+  				&.next {
+  					text-align: right;
+  				}
+  			}
+
+  			span {
+  				&.hint {
+            padding: 0;
+  					font-family: sans-serif;
+  					font-weight: 100;
+  					font-size: 0.75em;
+  					color: $boulder;
+  				}
+  			}
+  		}
+  	}
+  }
 }

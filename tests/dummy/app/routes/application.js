@@ -13,38 +13,51 @@ export default Ember.Route.extend({
           z: "-100",
           rotateX: "-40",
           rotateY: "-10",
-          scale: "2",
+          scale: "6",
           component: "slide-setup"
         },
         {
           id: "slide-presentation",
-          title: "Components: impress-presentation",
+          title: "impress-presentation",
           classNames: "step",
           x: "0",
           y: "0",
           rotate: "45",
           y: "-1000",
+          scale: "1",
           component: 'slide-presentation'
         },
         {
           id: "slide-slide",
-          title: "Components: impress-slide",
+          title: "impress-slide",
           classNames: "step",
-          x: "1000",
-          y: "-1500",
+          x: "-4000",
+          y: "-5500",
+          scale: "6",
           component: 'slide-slide'
         },
         {
           id: "slide-controls",
-          title: "Controls",
+          title: "impress-controls",
           classNames: "step",
           x: "6200",
           y: "4300",
           z: "-100",
           rotateX: "-40",
           rotateY: "10",
-          scale: "2",
+          scale: "1",
           component: 'slide-controls'
+        },
+        {
+          id: "slide-hook",
+          title: "impress-hook",
+          classNames: "step",
+          classNames: "step",
+          x: "-6200",
+          y: "-1000",
+          rotate: "45",
+          scale: "6",
+          component: 'slide-hook'
         }
       ]
     }

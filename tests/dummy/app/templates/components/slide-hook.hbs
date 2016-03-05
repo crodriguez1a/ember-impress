@@ -1,0 +1,23 @@
+<h2>
+  <span class="codish smaller">
+    &#123;&#123;impress-hook&#125;&#125;
+  </span>
+</h2>
+
+<p>
+  <code>currentStep</code> - Provides the step currently assigned as `present`
+</p>
+<p>
+  <pre>{{#code-hljs language="handlebars"}}
+  &#123;&#123;#impress-hook as |impress|&#125;&#125;
+    &lt;nav&gt;
+      &#123;&#123;#each model.slides as |slide|&#125;&#125;
+        &#123;&#123;!Leveraging ember-truth-helpers&#125;&#125;
+        &lt;a class="&#123;&#123;if (eq slide.id impress.currentStep) 'is-active'&#125;&#125;" href="#/&#123;&#123;slide.id&#125;&#125;"&gt;
+          &#123;&#123;slide.title&#125;&#125;
+        &lt;/a&gt;
+      &#123;&#123;/each&#125;&#125;
+    &lt;nav&gt;
+  &#123;&#123;/impress-hook&#125;&#125;
+  {{/code-hljs}}</pre>
+</p>
