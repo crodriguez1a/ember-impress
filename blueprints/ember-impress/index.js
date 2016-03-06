@@ -1,8 +1,16 @@
 /*jshint node:true*/
 module.exports = {
-  description: '',
+  description: 'Installs Impress.js',
 
-  afterInstall: function() {
-    return this.addBowerPackageToProject('impress.js', '0.5.3');
-  }
+	normalizeEntityName: function() {
+		// this prevents an error when the entityName is
+		// not specified (since that doesn't actually matter
+		// to us
+	},
+
+	afterInstall: function() {
+    return this.addBowerPackagesToProject([
+      { name: 'impress.js', target: '^0.5.3' }
+    ]);
+	}
 };
