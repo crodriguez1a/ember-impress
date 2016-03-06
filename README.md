@@ -6,6 +6,7 @@ An ember addon for [impress.js](https://github.com/impress/impress.js/)
 ## Installation
 
 `ember install ember-impress`
+`bower install impress.js`
 
 ## Setup
 
